@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  li a {
+    color: #6b6b6b;
+    font-family: "Bricolage Grotesque";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  
+}
