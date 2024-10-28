@@ -13,7 +13,10 @@ const Header = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("https://671f5b4d8cd82e000864d01c--cosmic-cassata-a69971.netlify.app/header");
+        const res = await fetch(
+          "/api/header"
+          
+        );
         const data = await res.json();
         setMenuData(data);
       } catch (error) {
@@ -27,7 +30,13 @@ const Header = () => {
     <div className="navbar-container container mx-auto flex justify-between items-center m-5">
       {/* Logo */}
       <div className="nav-logo">
-        <Image src={menuData.logo || "/eitblogo.png"} alt="Eitb Logo" height={34} width={258} priority />
+        <Image
+          src={menuData.logo || "/eitblogo.png"}
+          alt="Eitb Logo"
+          height={34}
+          width={258}
+          priority
+        />
       </div>
 
       {/* Menu */}
@@ -71,12 +80,22 @@ const Header = () => {
       {/* Search Icon and Contact Button */}
       <div className="nav-btn flex gap-5 items-center">
         <div className="nav-search">
-          <Image src={menuData.searchIcon || "/default-search-icon.svg"} alt="Search Icon" width={21} height={20} />
+          <Image
+            src={menuData.searchIcon || "/default-search-icon.svg"}
+            alt="Search Icon"
+            width={21}
+            height={20}
+          />
         </div>
         <div className="nav-contactbtn">
           <button className="flex items-center gap-2 bg-primary-100 text-white-100 font-body p-2 rounded-3xl">
             {menuData.contactButton?.text || "LET'S TALK"}
-            <Image src={menuData.contactButton?.icon || "/default-icon.svg"} alt="Icon" width={19} height={12} />
+            <Image
+              src={menuData.contactButton?.icon || "/default-icon.svg"}
+              alt="Icon"
+              width={19}
+              height={12}
+            />
           </button>
         </div>
       </div>

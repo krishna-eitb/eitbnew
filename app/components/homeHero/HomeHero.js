@@ -2,25 +2,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-export const HomeHero = () => {
-  const [heroData, setHeroData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("https://671f5b4d8cd82e000864d01c--cosmic-cassata-a69971.netlify.app/home-hero");
-        const data = await res.json();
-        setHeroData(data);
-      } catch (error) {
-        console.error("Failed to fetch home hero data:", error);
-      }
-    };
-    fetchData();
-  }, []);
-
+export const HomeHero = ({heroData}) => {
   if (!heroData) {
-    return null; // Optionally, you could add a loading spinner here
+    return <div>Loading...</div>; // or a fallback UI
   }
+
+  
 
   return (
     <div className="h-[600px] bg-primary-100 rounded-2xl flex items-center">
