@@ -8,7 +8,7 @@ export const HomeHero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/api/home-hero");
+        const res = await fetch("https://671f5b4d8cd82e000864d01c--cosmic-cassata-a69971.netlify.app/home-hero");
         const data = await res.json();
         setHeroData(data);
       } catch (error) {

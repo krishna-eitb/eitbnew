@@ -13,7 +13,7 @@ const Header = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/api/header");
+        const res = await fetch("https://671f5b4d8cd82e000864d01c--cosmic-cassata-a69971.netlify.app/header");
         const data = await res.json();
         setMenuData(data);
       } catch (error) {
