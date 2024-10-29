@@ -6,6 +6,8 @@ import VideoCompo from "../video/VideoCompo";
 import UxDesign from "../uxdesign/UxDesign";
 import MobileFriend from "../mobilefriend/MobileFriend";
 import OfferSec from "../offerSec/OfferSec";
+import HomeHeroSkeleton from "../homeHero/HomeHeroSkeleton";
+import MobileFriendSkeleton from "../mobilefriend/MobileFriendSkeleton";
 
 
 
@@ -22,7 +24,16 @@ const HomePage = () => {
     fetchData();
   }, []);
 
-  if (!data) return <div>Loading...</div>; // Show a loading state
+  if (!data) {
+    return (
+      <div>
+        <HomeHeroSkeleton/>
+        <div className="mt-36"></div>
+        <MobileFriendSkeleton/>
+        <div className="mt-36"></div>
+      </div>
+    );
+  }
 
   return (
     <div>

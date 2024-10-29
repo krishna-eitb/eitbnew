@@ -1,3 +1,4 @@
+import Image from "next/image";
 const OfferSec = ({ data }) => {
   if (!data) {
     return <div>Loading...</div>; // or a fallback UI
@@ -20,7 +21,7 @@ const OfferSec = ({ data }) => {
           <button className="rounded-3xl mt-8 flex items-center gap-2 bg-primary-100 p-3 w-fit px-4 text-white-100 font-heading text-bodyText uppercase">
             {data.button.text}
             <span>
-              <img src={data.button.icon} alt="Arrow Icon" width={21} height={14} />
+              <Image src={data.button.icon} alt="Arrow Icon" width={21} height={14} />
             </span>
           </button>
         </div>
